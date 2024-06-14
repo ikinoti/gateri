@@ -13,3 +13,12 @@ class AboutMe(models.Model):
     
     def __str__(self):
         return "About Me"
+
+
+# Service Model
+class Service(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Service Name")
+    description = models.TextField(verbose_name="About Service")
+
+    def __str__(self):
+        return self.name
