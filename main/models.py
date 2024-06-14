@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 
 # About Model
 class AboutMe(models.Model):
@@ -22,3 +22,12 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+    
+# Recent Work Model
+class RecentWork(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Work Title")
+    # image = models.ImageField(upload_to="works")
+    image = CloudinaryField('image')
+
+    def __str__(self):
+        return self.title
